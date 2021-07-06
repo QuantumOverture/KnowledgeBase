@@ -16,9 +16,7 @@
 #### Django Setup:
 
 * To install the library:`pip3 install Django`
-
 * To start project (initialize Django in a directory): `django-admin startproject [NAME OF PROJECT]`  (No dashes should be in the name).
-
   *  Inside of the `[NAME OF PROJECT DIR]`:
     * `__intit__.py` (Tells Python that this is a Python package)
     * `settings.py` (Project settings can be configured here)
@@ -26,11 +24,8 @@
     * `wsgi.py` (WSGI: how our Python app and webserver communicate. Can configure this communication here but default setup is provided.)
   * At the same directory level of this project folder:
     * `manage.py `(Allows us to run command-line commands)
-
 * Start project: `python3 manage.py runserver` ==> Starts a debug website on 127.0.0.1:8000 or localhost:8000
-
 * Within a project you can have multiple apps(e.g store section of the website would be its own "app"). You can also mix and match apps in different projects.
-
   * Command to create a new app: `python manage.py startapp [NAME OF APP]`
     * There will be a new folder at the same level as the project directory created from `django-admin startproject [NAME OF PROJECT]`.
     * It will have:
@@ -43,7 +38,7 @@
       * `views.py`
     * You will also notice a `db.sqlite3` at the same level as the django-admin project.
 
-  #### Creating a custom page
+#### Creating a custom page (no templating)
 
 * In the `app/views.py`:
 
@@ -79,12 +74,15 @@
     
     urlpatterns = [
         ...,
-        path("Name/",include("app_dir_name.urls")) # Name/ cut from given url and then rest of the url passed in to the app's urls.py
+        path("Name/",include("app_dir_name.urls")) # Matched url cut from given url and then rest of the url passed in to the app's urls.py
     ]
     
     ```
 
-    
+    * Once we add this paths the debug/default website should stop showing up.
+    * If you have `""` in the path(with an include()): then nothing gets matched/cut and the whole thing can get passed in to the app. Good idea to have `/admin` at start if you intend on doing this, so it can still get matched.
+
+  * `python3 manage.py runserver` : should start the dev. server which you can interact it and enter `localhost:8000/Name` to check that the above works.
 
 
 
