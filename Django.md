@@ -1,6 +1,6 @@
 # Django 📟
 
-⌚ Last Updated on: 07/06/2021
+⌚ Last Updated on: 07/07/2021
 
 ***
 
@@ -169,7 +169,15 @@
   * Use `<a href="{% url '[Name given to view in urls.py of the app]' %}">`
   * (HTML BREAK) `<a href="#"/>` is considered a "dead" link that takes you no where.
 
-  
+#### Admin Page Setup
+
+* You have `website.com/admin` route with an admin page at the start. But you need to create a "super user" to actually use this page to manipulate various things on your website.
+  * Command to create super user: `python3 manage.py createsuperuser`
+    * Won't work => We need to create a database to store this user data.
+    * We need to perform a database migration(allow us to apply changes to our database).
+    * The first migration will create the database and add a bunch of default tables. => `python3 manage.py makemigration` (detects changes and prepares Django to update the database)
+    * To apply the migrations: `python3 manage.py migrate`
+    * Now if you re-run the superuser command it will run (it will allow you to enter some user data for the admin page).
 
 
 
