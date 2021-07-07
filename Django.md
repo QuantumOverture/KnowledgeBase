@@ -84,9 +84,92 @@
 
   * `python3 manage.py runserver` : should start the dev. server which you can interact it and enter `localhost:8000/Name` to check that the above works.
 
+#### Templating & App "Registration"
 
+* Rather than having to type all the HTML out in a `HttpResponse` object. We can and should use templates instead.
 
+* We first need a templates directory in the app directory: `app/templates/app` [add the `app` at the end as per convention since Django will be looking for templates in other places as well]
 
+  * Create your HTML files in this directory.
+
+* We need to add this app to our project to get templates working/searched properly + for database usage: 
+
+  * Get class name of this app in `app/apps.py` (e.g `AppConfig`)
+  * Then go to the project's `settings.py`. And add the app (`apps_dir.apps.AppConfig,`) to the `INSTALLED_APPS` list. **Add an app here whenever you make one.**
+
+* Use `django.shorcuts import render` => To return a template in a function(still returns a HTTP response in the background):
+
+  ```python
+  return render(request, 'dir_in_templates_for_app/index.html',[CONTEXT])
+  ```
+
+  * View needs to always return an HTTP response or exception.
+
+* The `[CONTEXT]` should be a dictionary (can have lists of other dictionaries or direct data). This passes data into the template.
+
+* Templating engine syntax:
+
+  * For loop:
+
+  ``` jinja2
+  {% for [val] in [CONTEXT Variable]%}
+  	...
+  {% endfor %}
+  ```
+
+  * Variable access:
+
+  ```jinja2
+  <p>{{ [val].attribute }}</p>
+  ```
+
+  * If statements:
+
+    ```jinja2
+    {% if [val] %} # Check var. existsence
+    ...
+    {% else %}
+    ...
+    {% endif %}
+    ```
+
+  * Template inheritance (assume `base.html` is a valid HTML file) - share repeated HTML and updating stuff is a lot more quick since you have a single update point: 
+
+    ```jinja2
+    # In base.html
+    <!DOCTYPE html>
+    <html>
+    ...
+    <body>
+    {% block content[can have unique name that matches in other html file?] %} {% endblock %}
+    <body>
+    ...
+    ```
+
+    ```jinja2
+    # In another html file
+    {% extends "app/base.html"%}
+    {% block content %}
+    	<UNIQUE HTML>
+    {% endblock content %}
+    # This will be inserted in the block content tag in base.html
+    ```
+
+* Static files (like Javascript files and CSS files) need to be in their own directory.
+
+  * Make a `static` directory in the app directory(*not* project directory).
+  * Make another app directory in `static` for the app.
+  * At the start of your HTML template write: `{% load static %}`
+  * In the `<head>` tag area, have a `<link href={% static 'app/[static_file_name]' %}>`
+
+* Sometimes you might have to clear your browser cache or restart the server to see your most up to date changes 
+
+* Hard coding routes in `<a href="/..">` to link to other pages of your website is not a good idea since you could change the routes in the future.
+
+  * Use `<a href="{% url '[Name given to view in urls.py of the app]' %}">`
+  * (HTML BREAK) `<a href="#"/>` is considered a "dead" link that takes you no where.
+
+  
 
 
 
