@@ -240,14 +240,56 @@ admin.site.register(Class/Model_of_models.pys)
   Val.save() # Save object to database
   
   
-  [Model].[Other Model]_set.all() # Get all objects associated to another object in another model(one to many)
+  [Model].[Other Model]_set.all() # Get all objects associated to another object in another model(one to many) (Other_model is lower case)
   
-  [Model].[Other Model]_set.create(...fields..) # Create another object associated with the "main" object (no need to specify the foreign key field or save - done automatically)
+  [Model].[Other Model]_set.create(...fields..) # Create another object associated with the "main" object (no need to specify the foreign key field or save - done automatically) (Other_model is lower case)
   
   
   ```
 
-  
+
+
+#### Model Forms
+
+* Go to your app directory and create a `forms.py`
+
+```python
+from django import forms
+from .models import [Class Name]
+
+class FormName(forms.ModelForm):
+    class Meta:
+        model = [MODEL NAME]
+        fields = [
+            'fields in MODEL'
+        ]
+
+```
+
+* Go to your views function to add a form:
+
+```python
+import .forms import FormName
+def ...():
+	form = FormName(request.POST or None)
+    if form.is_valid():
+        form.save()
+    context = {
+        ...,
+        "form":form
+    }
+```
+
+* Inside your template:
+
+```python
+<form method="POST"> {% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value= "Save"/>
+</form>
+```
+
+
 
 ***
 
@@ -255,3 +297,4 @@ admin.site.register(Class/Model_of_models.pys)
 
 * https://www.djangoproject.com/start/ (*Django Tutorials* by `Django Software Foundation`)
 * https://www.youtube.com/watch?v=UmljXZIypDc (*Python Django Tutorial* by`Corey Schafer`)
+* https://www.youtube.com/watch?v=6oOHlcHkX2U (*Try DJANGO Tutorial - 23 - Django Model Forms* by `CodingEntrepreneurs`)
