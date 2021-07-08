@@ -1,6 +1,6 @@
 # Django 📟
 
-⌚ Last Updated on: 07/07/2021
+⌚ Last Updated on: 07/08/2021
 
 ***
 
@@ -178,8 +178,76 @@
     * The first migration will create the database and add a bunch of default tables. => `python3 manage.py makemigration` (detects changes and prepares Django to update the database)
     * To apply the migrations: `python3 manage.py migrate`
     * Now if you re-run the superuser command it will run (it will allow you to enter some user data for the admin page).
+* Add a new database/model to your admin view (go to app's `admin.py`) - allows you to manipulate/change/update it via the admin page:
+
+```python
+from .models import Class/Model_of_models.py
+
+admin.site.register(Class/Model_of_models.pys)
+```
 
 
+
+#### Databases
+
+* Django has its own ORM (object relational mapper) => allows us to access our database (whatever type/brand) in an object orientated way(no raw SQL). (Databases are represented as classes know as `models`)
+
+  * Django has a pre-made user account model.
+
+* In the app directory we will have a `models.py`:
+
+  * Creating a new model/database:
+
+  ```python
+  class DatabaseName(models.Model):
+      NewFieldInDatabase = models.Type(parameters)
+      def __str__(self): # Not required
+          return self.NewFieldInDatabase # Return a string representation of the object
+  ```
+
+  * Importing another database(one-to-many relationship - use a foreign key):
+
+  ```python
+  from django.contrib.auth.models import User
+  
+  # A User will have many of this:
+  class ...:
+      ...
+      Field = models.ForeignKey(User, on_delete = models.CASCADE) # on_delete is behavior that should be intiated when the User gets deleted (in this we delete all its associated data)
+  ```
+
+  * Now we need to run migrations to create changes then apply them: 
+    * `python3 manage.py makemigrations` (create change list)
+    * `python3 manage.py sqlmigrate [APP NAME] [migration number generated from previous command]` (create SQL)
+    * `python3 manage.py migrate` (apply changes)
+
+* Querying the database:
+
+  ```python
+  from app.models import Class[from models.py of this app]
+  
+  [Model].objects.all() # Get all objects in database
+  
+  [Model].objects.first() # Get first object (tail/end version also exists)
+  
+  [Model].objects.filter(field='...') # Returns all objects that match given field value
+  
+  # This data can all be captured in a variable (use dot notation to access the objects attributes e.g obj.id , obj.pk)
+  
+  [Model].objects.get(id=...) # Get an object via its id
+  
+  Val = [Model](field1=...,field2=...,...) # Create an object (Also can set this to a variable)
+  Val.save() # Save object to database
+  
+  
+  [Model].[Other Model]_set.all() # Get all objects associated to another object in another model(one to many)
+  
+  [Model].[Other Model]_set.create(...fields..) # Create another object associated with the "main" object (no need to specify the foreign key field or save - done automatically)
+  
+  
+  ```
+
+  
 
 ***
 
