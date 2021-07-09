@@ -289,7 +289,159 @@ def ...():
 </form>
 ```
 
+#### User forms
 
+* We can create classes and these classes can create forms for us. There is also a special user creation form(`from django.contrib.auth.forms import UserCreationForm`).
+
+  ``` python
+  def ...(): # View
+      if request.method == "POST":
+          form = UserCreationForm(request.POST)
+          if form.is_valid():
+            	form.save()
+          	username = form.cleaned_data.get('username')
+              messages.success(request,f'Account Created') # In django.contrib import messages [FLASH MESSAGE]
+         		return redirect('blog-home')
+      else:
+  		form = UserCreationForm()
+  	return render(..,..,{'..':form})
+  ```
+
+  * In the template:
+
+  ```html
+  <form method="POST"> 
+      
+      {% csrf_token %}
+      <fieldset >
+          <legend>
+              ...
+          </legend>
+          {{ form.as_p }}
+      </fieldset>
+      
+      <button type="submit"> Sign Up
+      </button>
+      
+  </form>
+  ```
+
+  * In `base.html` to add flash message support:
+
+  ```jinja2
+  {% if messages %}
+  	// IN BOOTSTRAP
+  	{% for messsage in messages %}
+  		<div class="alertalert-{{% messaage.tag %}}"> {{% message%}}</div> 
+  	{% endfor %}
+  {% endif %}
+  ```
+
+  * In the app `forms.py` (Creating custom user authentication field):
+
+  ```python
+  from django import forms
+  from django.contrib.auth.models import User
+  from django.contrib.auth.forms import UserCreationForm
+  
+  class UserRegisterForm(UserCreationForm):
+  	email = forms.EmailField()
+  	class Meta:
+  		model = User
+  		fields = ['username','email','password1','password2']
+  	
+      # Use in place of UserCreationForm
+  ```
+
+  * crispy forms (styling Django forms):
+
+    * Installation: `pip install django-crispy-forms`
+    * Register in your django project's `settings.py`: 
+
+    ```python
+    INSTALLED_APPS = [
+    'crispy_forms',
+    ...
+    ]
+    ```
+
+    ```python
+    # Go to bottom of settings.py
+    
+    CRISPY_TEMPLATE_PACK = 'boostrap#' # Change the boostrap or any other CSS library.
+    ```
+
+    * Go to your login/register html page:
+
+      ```jinja2
+      // At the top
+      {% extends ... %}
+      {% load crispy_forms_tags %}
+      
+      // remove the _as_p and use {{ form|crispy }} to perform styling
+      // Can style further but crispy is good enough
+      ```
+
+
+
+#### Login/Logout system
+
+* Django provides views for logging in and logging out. `from django.contrib.auth import views as ...`
+
+  * Add a new URLpattern(class-based views): 
+
+    ```python
+    path('login/',auth_views.LoginView.as_view(template_name="app_dir/login.html"),name="login"),
+    path('logout/',auth_views.LogoutView.as_view(template_name="app_dir/logout.html"),name="logout"),
+    ```
+
+  * Still need to create templates for these views:
+
+  ```jinja2
+  {% extends ... %}
+  ...
+  {{ form|crispy}}
+  ...
+  ```
+
+  * To change where users get redirected to when they are logging in:
+
+  ```python
+  # Go to project settings.py (bottom)
+  
+  LOGIN_REDIRECT_URL = '(NAME OF VIEW like blog-home)' 
+  ```
+
+  * Make a button redirect to the logout view.
+  * How to respond to a logged in user(by adding a conditional):
+
+  ```jinja2
+  // In your HTML template
+  {% if user.is_authenticated%}
+  	...
+  {% else %}
+  	...
+  {% endif %}
+  ```
+
+  * Adding restriction to certain routes if a user is not logged in:
+
+  ```python
+  # In view
+  from django.contrib.auth.decorators import login_required
+  
+  @login_required
+  def ...(request):
+  	return render(..)
+  	
+  	
+  # In your setttings.py (project) add
+  LOGIN_URL = 'name of login view' # Redirected when a user is not authenticated
+  ```
+
+  * Check if a user is authenticated in a view:
+
+  `if request.user.is_authenticated:`
 
 ***
 
@@ -298,3 +450,4 @@ def ...():
 * https://www.djangoproject.com/start/ (*Django Tutorials* by `Django Software Foundation`)
 * https://www.youtube.com/watch?v=UmljXZIypDc (*Python Django Tutorial* by`Corey Schafer`)
 * https://www.youtube.com/watch?v=6oOHlcHkX2U (*Try DJANGO Tutorial - 23 - Django Model Forms* by `CodingEntrepreneurs`)
+* https://stackoverflow.com/questions/3644902/how-to-check-if-a-user-is-logged-in-how-to-properly-use-user-is-authenticated (*How to check if a user is logged in (how to properly use user.is_authenticated)?* by `[Rick](https://stackoverflow.com/users/378874/rick)`) 
