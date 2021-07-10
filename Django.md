@@ -303,7 +303,7 @@ def ...():
             	form.save()
           	username = form.cleaned_data.get('username')
               messages.success(request,f'Account Created') # In django.contrib import messages [FLASH MESSAGE]
-         		return redirect('blog-home')
+         		return redirect('blog-home') # Can add parameters here if URL has parameters
       else:
   		form = UserCreationForm()
   	return render(..,..,{'..':form})
@@ -454,3 +454,4 @@ def ...():
 * https://www.youtube.com/watch?v=6oOHlcHkX2U (*Try DJANGO Tutorial - 23 - Django Model Forms* by `CodingEntrepreneurs`)
 * https://stackoverflow.com/questions/3644902/how-to-check-if-a-user-is-logged-in-how-to-properly-use-user-is-authenticated (*How to check if a user is logged in (how to properly use user.is_authenticated)?* by `[Rick](https://stackoverflow.com/users/378874/rick)`) 
 * https://docs.djangoproject.com/en/3.2/topics/http/urls/ (Django URL Dispatcher Doc by `Django Software Foundation`)
+* https://stackoverflow.com/questions/3209906/django-return-redirect-with-parameters (*Django return redirect() with parameters* by `[muntu](https://stackoverflow.com/users/383998/muntu)`)
