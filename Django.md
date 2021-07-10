@@ -1,6 +1,6 @@
 # Django 📟
 
-⌚ Last Updated on: 07/08/2021
+⌚ Last Updated on: 07/10/2021
 
 ***
 
@@ -83,6 +83,8 @@
     * If you have `""` in the path(with an include()): then nothing gets matched/cut and the whole thing can get passed in to the app. Good idea to have `/admin` at start if you intend on doing this, so it can still get matched.
 
   * `python3 manage.py runserver` : should start the dev. server which you can interact it and enter `localhost:8000/Name` to check that the above works.
+  
+  * Want parameter variables in the URL that gets passed in? `path("<type:name>",views.FunctionName,...)` => In the `views.py` add a parameter named `name` to the function responsible for rendering this URL.
 
 #### Templating & App "Registration"
 
@@ -447,7 +449,8 @@ def ...():
 
 ### 🥽🥼 Resources Used:
 
-* https://www.djangoproject.com/start/ (*Django Tutorials* by `Django Software Foundation`)
+* https://www.djangoproject.com/start/  (*Django Tutorials* by `Django Software Foundation`)
 * https://www.youtube.com/watch?v=UmljXZIypDc (*Python Django Tutorial* by`Corey Schafer`)
 * https://www.youtube.com/watch?v=6oOHlcHkX2U (*Try DJANGO Tutorial - 23 - Django Model Forms* by `CodingEntrepreneurs`)
 * https://stackoverflow.com/questions/3644902/how-to-check-if-a-user-is-logged-in-how-to-properly-use-user-is-authenticated (*How to check if a user is logged in (how to properly use user.is_authenticated)?* by `[Rick](https://stackoverflow.com/users/378874/rick)`) 
+* https://docs.djangoproject.com/en/3.2/topics/http/urls/ (Django URL Dispatcher Doc by `Django Software Foundation`)
