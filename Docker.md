@@ -40,8 +40,7 @@
   - To see all images on host: `docker image ls `(You'll get a swanky table on the terminal with metadata for each image).
   - `play with docker` website -> Can create a VM instance (with Linux and Docker). You can pull and run the image you deployed on Docker Hub here. (Use `docker pull [image name]` to get the image from Docker Hub) or just use `docker run [image name]` -> will check to see if you have this image locally, if not then it does downloads it like `pull`.
   - To create a Docker container you can interact with: `docker run -it [image name]`(e.g running a Ubuntu image will give you a Linux root shell)
-
-
+  - Use `docker export [container id] > result.tar` and then `tar -xvf result.tar` to get the container's files on your host/system.
 
 ***
 
