@@ -34,7 +34,7 @@
   - `docker run -p [PORT OF HOST]:[PORT OF CONTAINER] [IMAGE NAME]` -> Run image into container and forward ports from host to container
   - Want to make a change? Rebuild and re-run. => Alternative: volumes.
     - Can share files between host and container and can also share and persist files between containers.
-    - To share files between host and container -> `docker run -p [PORT OF HOST]:[PORT OF CONTAINER] -v [PATH OF DIR YOU WANT TO MOUNT/SHARE WITH CONTAINER]:[DIR IN CONTAINER YOU WANT IT TO BE COPIED/MOUNTED TO] [IMAGE NAME]`  => Changes will be reflected right away.
+    - To share files between host and container -> `docker run -p [PORT OF HOST]:[PORT OF CONTAINER] -v [PATH OF DIR YOU WANT TO MOUNT/SHARE WITH CONTAINER]:[DIR IN CONTAINER YOU WANT IT TO BE COPIED/MOUNTED TO] [IMAGE NAME]`  => Changes will be reflected right away. For WSL better to use `named volumes`. Also the paths must be **absolute**!
     - Life of a container is tied to the life of the main  process of that container(be aware of that). Once it ends, the container stops running. -> Try to have containers with only one process(run multiple containers if need be).
   - Images are not single files -> how Docker stores these images is complex and is beyond the scope of a regular developer :) 
   - To see all images on host: `docker image ls `(You'll get a swanky table on the terminal with metadata for each image).
