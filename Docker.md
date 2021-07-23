@@ -34,13 +34,14 @@
   - `docker run -p [PORT OF HOST]:[PORT OF CONTAINER] [IMAGE NAME]` -> Run image into container and forward ports from host to container
   - Want to make a change? Rebuild and re-run. => Alternative: volumes.
     - Can share files between host and container and can also share and persist files between containers.
-    - To share files between host and container -> `docker run -p [PORT OF HOST]:[PORT OF CONTAINER] -v [PATH OF DIR YOU WANT TO MOUNT/SHARE WITH CONTAINER]:[DIR IN CONTAINER YOU WANT IT TO BE COPIED/MOUNTED TO] [IMAGE NAME]`  => Changes will be reflected right away. For WSL better to use `named volumes`. Also the paths must be **absolute**!
+    - To share files between host and container -> `docker run -p [PORT OF HOST]:[PORT OF CONTAINER] -v [PATH OF DIR YOU WANT TO MOUNT/SHARE WITH CONTAINER]:[DIR IN CONTAINER YOU WANT IT TO BE COPIED/MOUNTED TO] [IMAGE NAME]`  => Changes will be reflected right away. Also the paths must be **absolute**!
     - Life of a container is tied to the life of the main  process of that container(be aware of that). Once it ends, the container stops running. -> Try to have containers with only one process(run multiple containers if need be).
   - Images are not single files -> how Docker stores these images is complex and is beyond the scope of a regular developer :) 
   - To see all images on host: `docker image ls `(You'll get a swanky table on the terminal with metadata for each image).
   - `play with docker` website -> Can create a VM instance (with Linux and Docker). You can pull and run the image you deployed on Docker Hub here. (Use `docker pull [image name]` to get the image from Docker Hub) or just use `docker run [image name]` -> will check to see if you have this image locally, if not then it does downloads it like `pull`.
   - To create a Docker container you can interact with: `docker run -it [image name]`(e.g running a Ubuntu image will give you a Linux root shell)
   - Use `docker export [container id] > result.tar` and then `tar -xvf result.tar` to get the container's files on your host/system.
+  - To create a container you can detach/attach to later -> Add the `-t -i` when you `run` the container. Then enter `Ctrl+p+q` to detach -> to reattach run: `docker attach [CONTAINER ID]`
 
 ***
 
@@ -48,4 +49,5 @@
 
 - https://www.youtube.com/watch?v=YFl2mCHdv24&list=RDQMCCdRNOc4KIE&start_radio=1 (*Learn Docker in 12 Minutes 🐳* by `Jake Wright`)
 - https://www.youtube.com/watch?v=pTFZFxd4hOI (*Docker Tutorial for Beginners [2021]* by `Programming with Mosh`) [⚠ Note ⚠: half of this tutorial is a Linux tutorial...so just focus on the first half if you are already comfortable with Linux Commands and/or Linux terminal usage]
+- https://stackoverflow.com/questions/19688314/how-do-you-attach-and-detach-from-dockers-process#:~:text=To%20detach%20from%20the%20container,Ctrl%20and%20press%20P%20%2B%20Q%20. (*https://stackoverflow.com/questions/19688314/how-do-you-attach-and-detach-from-dockers-process* by `https://stackoverflow.com/users/356788/ken-cochrane`)
 
