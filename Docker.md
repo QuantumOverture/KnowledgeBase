@@ -29,7 +29,8 @@
   - `EXPOSE [PORT]` -> When run this image and you get a container, the container will listen in on the specified port.
   - `WORKDIR [DIR]` -> Change your working directory to `[DIR]`
   - `COPY ./[PATH IN HOST] /[PATH IN CONTAINER] ` -> copy your files into a new directory in the container.
-  - `CMD [OS/TERMINAL COMMAND]` -> Run the command in the OS (useful when telling docker to run/start your app).
+  - `CMD [OS/TERMINAL COMMAND]` -> Run the command in the OS (useful when telling docker to run/start your app). The last `CMD` is the one that becomes the default command that specifies the live of the container. This is the command that gets run when you run the container.
+    - `RUN [[OS/TERMINAL COMMAND]]` -> Run the command in the OS but actually commit it(during Build time). Lots of these will be used and are used to build up environment.
   - `docker build -t [NAME] [DIR LOCATION OF DOCKERFILE]` -> Build your image
   - `docker run -p [PORT OF HOST]:[PORT OF CONTAINER] [IMAGE NAME]` -> Run image into container and forward ports from host to container
   - Want to make a change? Rebuild and re-run. => Alternative: volumes.
@@ -50,6 +51,7 @@
 
 - https://www.youtube.com/watch?v=YFl2mCHdv24&list=RDQMCCdRNOc4KIE&start_radio=1 (*Learn Docker in 12 Minutes 🐳* by `Jake Wright`)
 - https://www.youtube.com/watch?v=pTFZFxd4hOI (*Docker Tutorial for Beginners [2021]* by `Programming with Mosh`) [⚠ Note ⚠: half of this tutorial is a Linux tutorial...so just focus on the first half if you are already comfortable with Linux Commands and/or Linux terminal usage]
-- https://stackoverflow.com/questions/19688314/how-do-you-attach-and-detach-from-dockers-process#:~:text=To%20detach%20from%20the%20container,Ctrl%20and%20press%20P%20%2B%20Q%20. (*https://stackoverflow.com/questions/19688314/how-do-you-attach-and-detach-from-dockers-process* by `https://stackoverflow.com/users/356788/ken-cochrane`)
+- https://stackoverflow.com/questions/19688314/how-do-you-attach-and-detach-from-dockers-process#:~:text=To%20detach%20from%20the%20container,Ctrl%20and%20press%20P%20%2B%20Q%20. (*How do you attach and detach from Docker's process?* by `https://stackoverflow.com/users/356788/ken-cochrane`)
 - https://docs.docker.com/engine/reference/commandline/logs/ (*docker logs* by `Docker Inc`)
+- https://stackoverflow.com/questions/37461868/difference-between-run-and-cmd-in-a-dockerfile (*Difference between RUN and CMD in a Dockerfile* by `https://stackoverflow.com/users/6386350/takesoup`)
 
