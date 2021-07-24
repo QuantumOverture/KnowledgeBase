@@ -1,6 +1,6 @@
 # Docker 🐋
 
-⌚ Last Updated on: 07/05/2021
+⌚ Last Updated on: 07/24/2021
 
 ***
 
@@ -42,6 +42,7 @@
   - To create a Docker container you can interact with: `docker run -it [image name]`(e.g running a Ubuntu image will give you a Linux root shell)
   - Use `docker export [container id] > result.tar` and then `tar -xvf result.tar` to get the container's files on your host/system.
   - To create a container you can detach/attach to later -> Add the `-t -i` when you `run` the container. Then enter `Ctrl+p+q` to detach -> to reattach run: `docker attach [CONTAINER ID]`
+  - To get the stdout/logs of a container: `docker logs [container ID]`
 
 ***
 
@@ -50,4 +51,5 @@
 - https://www.youtube.com/watch?v=YFl2mCHdv24&list=RDQMCCdRNOc4KIE&start_radio=1 (*Learn Docker in 12 Minutes 🐳* by `Jake Wright`)
 - https://www.youtube.com/watch?v=pTFZFxd4hOI (*Docker Tutorial for Beginners [2021]* by `Programming with Mosh`) [⚠ Note ⚠: half of this tutorial is a Linux tutorial...so just focus on the first half if you are already comfortable with Linux Commands and/or Linux terminal usage]
 - https://stackoverflow.com/questions/19688314/how-do-you-attach-and-detach-from-dockers-process#:~:text=To%20detach%20from%20the%20container,Ctrl%20and%20press%20P%20%2B%20Q%20. (*https://stackoverflow.com/questions/19688314/how-do-you-attach-and-detach-from-dockers-process* by `https://stackoverflow.com/users/356788/ken-cochrane`)
+- https://docs.docker.com/engine/reference/commandline/logs/ (*docker logs* by `Docker Inc`)
 
