@@ -15,7 +15,7 @@
   - In containers, the kernel (core part of OS) is shared(and the host machine's kernel is used) but everything on top of that is separate (e.g bins/, libraries, app environments) -> you get your isolated environments but less resource heavy.
 - Docker Architecture is based on the Client-Server model(connected via a RESTful API).
   - The Docker engine sits in the background and takes care of building and running containers. 
-  - Containers are technically a regular process like other processes on your computer. They share the OS of the host machine. (e.g you can only run Windows and Linux containers on a Windows host but Docker on Mac uses a lightweight Linux VM).
+  - Containers are technically a regular process like other processes on your computer. They share the OS and resources of the host machine. (e.g you can only run Windows and Linux containers on a Windows host but Docker on Mac uses a lightweight Linux VM).
 - A container is a running instance of an image(which is the template for the environment you want). The image has all the OS,libraries/software, and application code all bundled together.
 - Docker workflow:
   - Make the application first -> then "Dockerize" it (make the `Dockerfile`)
@@ -44,7 +44,7 @@
   - To create a Docker container you can interact with: `docker run -it [image name]`(e.g running a Ubuntu image will give you a Linux root shell)
   - Use `docker export [container id] > result.tar` and then `tar -xvf result.tar` to get the container's files on your host/system.
   - To create a container you can detach/attach to later -> Add the `-t -i` when you `run` the container. Then enter `Ctrl+p+q` to detach -> to reattach run: `docker attach [CONTAINER ID]`
-  - To get the stdout/logs of a container: `docker logs [container ID]` (Need specific drivers - so check before you start your container See __Resources Used__ section )
+  - To get the stdout/logs of a container: `docker logs [container ID]` (Need specific drivers - so check before you start your container see __Resources Used__ section )
 
 ***
 
