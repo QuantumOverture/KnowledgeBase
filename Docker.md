@@ -28,6 +28,7 @@
   - `FROM [BASE IMAGE]` -> start from base image and add your own things to it. Get the image names from hub.docker.com
   - `EXPOSE [PORT]` -> When run this image and you get a container, the container will listen in on the specified port.
   - `WORKDIR [DIR]` -> Change your working directory to `[DIR]`
+    - Make sure you know what your start directory is when you use official images.
   - `COPY ./[PATH IN HOST] /[PATH IN CONTAINER] ` -> copy your files into a new directory in the container.
   - `CMD [OS/TERMINAL COMMAND]` -> Run the command in the OS (useful when telling docker to run/start your app). The last `CMD` is the one that becomes the default command that specifies the live of the container. This is the command that gets run when you run the container.
     - `RUN [[OS/TERMINAL COMMAND]]` -> Run the command in the OS but actually commit it(during Build time). Lots of these will be used and are used to build up environment.
