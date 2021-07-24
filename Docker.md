@@ -45,6 +45,7 @@
   - Use `docker export [container id] > result.tar` and then `tar -xvf result.tar` to get the container's files on your host/system.
   - To create a container you can detach/attach to later -> Add the `-t -i` when you `run` the container. Then enter `Ctrl+p+q` to detach -> to reattach run: `docker attach [CONTAINER ID]`
   - To get the stdout/logs of a container: `docker logs [container ID]` (Need specific drivers - so check before you start your container see __Resources Used__ section )
+  - Want to work with multiple containers? Use Docker Compose or Kubernetes. Make sure each container only has one process running.
 
 ***
 
@@ -55,4 +56,5 @@
 - https://stackoverflow.com/questions/19688314/how-do-you-attach-and-detach-from-dockers-process#:~:text=To%20detach%20from%20the%20container,Ctrl%20and%20press%20P%20%2B%20Q%20. (*How do you attach and detach from Docker's process?* by `https://stackoverflow.com/users/356788/ken-cochrane`)
 - https://docs.docker.com/engine/reference/commandline/logs/ (*docker logs* by `Docker Inc`)
 - https://stackoverflow.com/questions/37461868/difference-between-run-and-cmd-in-a-dockerfile (*Difference between RUN and CMD in a Dockerfile* by `https://stackoverflow.com/users/6386350/takesoup`)
+- https://stackoverflow.com/questions/49382973/do-i-need-multiple-docker-containers-or-create-single-container-and-install-othe (*Do i need multiple docker containers OR create single container and install other softwares in it?* by `https://stackoverflow.com/users/6225547/gous-md`)
 
