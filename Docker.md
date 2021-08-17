@@ -48,7 +48,7 @@
   - Use `docker export [container id] > result.tar` and then `tar -xvf result.tar` to get the container's files on your host/system.
   - To create a container you can detach/attach to later -> Add the `-t -i` when you `run` the container. Then enter `Ctrl+p+q` to detach -> to reattach run: `docker attach [CONTAINER ID]`
   - To get the stdout/logs of a container: `docker logs [container ID]` (Need specific drivers - so check before you start your container see __Resources Used__ section )
-  - Want to work with multiple containers? Use Docker Compose or Kubernetes. Make sure each container only has one process running.
+  - Want to work with multiple containers for microservices? Use Docker Compose or Kubernetes. Make sure each container only has one process running.
  
 ***
 
