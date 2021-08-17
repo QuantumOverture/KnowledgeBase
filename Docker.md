@@ -60,4 +60,5 @@
 - https://docs.docker.com/engine/reference/commandline/logs/ (*docker logs* by `Docker Inc`)
 - https://stackoverflow.com/questions/37461868/difference-between-run-and-cmd-in-a-dockerfile (*Difference between RUN and CMD in a Dockerfile* by `https://stackoverflow.com/users/6386350/takesoup`)
 - https://stackoverflow.com/questions/49382973/do-i-need-multiple-docker-containers-or-create-single-container-and-install-othe (*Do i need multiple docker containers OR create single container and install other softwares in it?* by `https://stackoverflow.com/users/6225547/gous-md`)
-
+- https://stackoverflow.com/questions/26504846/copy-directory-to-another-directory-using-add-command(*Copy directory to another directory using ADD command* by `https://stackoverflow.com/users/233618/pengwang`)
+- https://docs.docker.com/engine/reference/commandline/ps/ (*docker ps* by ` Docker Inc`)
