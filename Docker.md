@@ -1,6 +1,6 @@
 # Docker 🐋
 
-⌚ Last Updated on: 07/24/2021
+⌚ Last Updated on: 08/17/2021
 
 ***
 
@@ -27,11 +27,13 @@
   - Start with an existing image in a `Dockerfile` (go to hub.docker.com) -> Use official ones  (look at given instructions)
   - `FROM [BASE IMAGE]` -> start from base image and add your own things to it. Get the image names from hub.docker.com
   - `EXPOSE [PORT]` -> When run this image and you get a container, the container will listen in on the specified port.
+  - `ADD [FOLDER] ./[FOLDER]` -> To copy an entire folder to the app directory inside the container.
   - `WORKDIR [DIR]` -> Change your working directory to `[DIR]`
     - Make sure you know what your start directory is when you use official images.
+    - Best to use the images `WORKDIR` example path and stick to it. Usually found in a section like: `How to use this image`
   - `COPY ./[PATH IN HOST] /[PATH IN CONTAINER] ` -> copy your files into a new directory in the container.
-  - `CMD [OS/TERMINAL COMMAND]` -> Run the command in the OS (useful when telling docker to run/start your app). The last `CMD` is the one that becomes the default command that specifies the live of the container. This is the command that gets run when you run the container.
-    - `RUN [[OS/TERMINAL COMMAND]]` -> Run the command in the OS but actually commit it(during Build time). Lots of these will be used and are used to build up environment.
+  - `CMD ["OS/TERMINAL","COMMAND"]` -> Run the command in the OS (useful when telling docker to run/start your app). The last `CMD` is the one that becomes the default command that specifies the live of the container. This is the command that gets run when you run the container.
+    - `RUN ["OS/TERMINAL","COMMAND"]` -> Run the command in the OS but actually commit it(during Build time). Lots of these will be used and are used to build up environment.
   - `docker build -t [NAME] [DIR LOCATION OF DOCKERFILE]` -> Build your image
   - `docker run -p [PORT OF HOST]:[PORT OF CONTAINER] [IMAGE NAME]` -> Run image into container and forward ports from host to container
   - Want to make a change? Rebuild and re-run. => Alternative: volumes.
@@ -40,13 +42,14 @@
     - Life of a container is tied to the life of the main  process of that container(be aware of that). Once it ends, the container stops running. -> Try to have containers with only one process(run multiple containers if need be).
   - Images are not single files -> how Docker stores these images is complex and is beyond the scope of a regular developer :) 
   - To see all images on host: `docker image ls `(You'll get a swanky table on the terminal with metadata for each image).
+  - Use `docker ps` to see a list of running containers.
   - `play with docker` website -> Can create a VM instance (with Linux and Docker). You can pull and run the image you deployed on Docker Hub here. (Use `docker pull [image name]` to get the image from Docker Hub) or just use `docker run [image name]` -> will check to see if you have this image locally, if not then it does downloads it like `pull`.
   - To create a Docker container you can interact with: `docker run -it [image name]`(e.g running a Ubuntu image will give you a Linux root shell)
   - Use `docker export [container id] > result.tar` and then `tar -xvf result.tar` to get the container's files on your host/system.
   - To create a container you can detach/attach to later -> Add the `-t -i` when you `run` the container. Then enter `Ctrl+p+q` to detach -> to reattach run: `docker attach [CONTAINER ID]`
   - To get the stdout/logs of a container: `docker logs [container ID]` (Need specific drivers - so check before you start your container see __Resources Used__ section )
   - Want to work with multiple containers? Use Docker Compose or Kubernetes. Make sure each container only has one process running.
-
+ 
 ***
 
 ### 🥽🥼 Resources Used:
