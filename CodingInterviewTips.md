@@ -7,3 +7,4 @@
 - *(Binary Trees but can be extended generally)*: floor(index/2) will give you the index of the parent node if the indexing scheme start with 1 as the start node and increments from left to right down each level.
 - *(Stacks and Recursion)*: When you feel you need to solve a problem recursively but need to abide by O(n) time complexity -> create a stack in Python with a list and use the pop and append commands to make a stack data structure -> also might be helpful to use the fact that when you access a item in list with "-1" you access the final item in the list.
 - *(Heaps)*: Use heaps when we have to make lots of max/min comparisons in program.
+- *(Dynamic Programming)* When you think the answer can be built up in sequential steps(all the way to the end) -> Use D.P and memoization technqiues(where you store these partial steps/answers).
