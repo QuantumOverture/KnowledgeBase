@@ -9,3 +9,89 @@
 - *(Heaps)*: Use heaps when we have to make lots of max/min comparisons in program.
 - *(Dynamic Programming)* When you think the answer can be built up in sequential steps(all the way to the end) or if you can save subproblems to stop re-calculation -> Use D.P and memoization technqiues(where you store these partial steps/answers).
 - *(Bit Manipulation)* You usually use bits as flags or indicators in these problems. So you don't have to worry about what the representation of the bits/integer are -> sometimes this is not the case though. Also note that bit operators have special properties you should be aware of: like the distributive applies to XOR. Also, in Python bit shiting adds bits and doesn't take them away like in fixed type length languages like C.
+
+***
+### Important Questions (Blind 75 & Leetcodepatterns.com(non-premimum & part of top 5 tech companies[Microsoft,Apple,Amazon,Google,Facebook]))
+- Spiral Matrix https://leetcode.com/problems/spiral-matrix/
+- Rotate Image https://leetcode.com/problems/rotate-image/
+- Word Search https://leetcode.com/problems/word-search/
+- First Missing Positive https://leetcode.com/problems/first-missing-positive/
+- Combination Sum https://leetcode.com/problems/combination-sum/
+- Generate Parentheses https://leetcode.com/problems/generate-parentheses/
+- Letter Combinations of a Phone Number https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+- Best Time to Buy and Sell Stock https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+- Maximum Subarray https://leetcode.com/problems/maximum-subarray/
+- Longest Increasing Subsequence https://leetcode.com/problems/longest-increasing-subsequence/
+- Longest Palindromic Substring https://leetcode.com/problems/longest-palindromic-substring/
+- Remove Linked List Elements https://leetcode.com/problems/remove-linked-list-elements/
+- Add Two Numbers https://leetcode.com/problems/add-two-numbers/
+- Number of Islands https://leetcode.com/problems/number-of-islands/
+- Reverse Linked List https://leetcode.com/problems/reverse-linked-list/
+- Merge k Sorted Lists https://leetcode.com/problems/merge-k-sorted-lists/
+- Merge Intervals https://leetcode.com/problems/merge-intervals/
+- Search in Rotated Sorted Array https://leetcode.com/problems/search-in-rotated-sorted-array/
+- Longest Substring Without Repeating Characters https://leetcode.com/problems/longest-substring-without-repeating-characters/
+- Minimum Window Substring https://leetcode.com/problems/minimum-window-substring/
+- Top K Frequent Elements https://leetcode.com/problems/top-k-frequent-elements/
+- Kth Largest Element in an Array https://leetcode.com/problems/kth-largest-element-in-an-array/
+- Binary Tree Zigzag Level Order Traversal https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+- Lowest Common Ancestor of a Binary Tree https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+- Validate Binary Search Tree https://leetcode.com/problems/val"id"ate-binary-search-tree/
+- Implement Trie (Prefix Tree) https://leetcode.com/problems/implement-trie-prefix-tree/
+- Binary Tree Maximum Path Sum https://leetcode.com/problems/binary-tree-maximum-path-sum/
+- Word Search II https://leetcode.com/problems/word-search-ii/
+- Find Median from Data Stream https://leetcode.com/problems/find-median-from-data-stream/
+- Two Sum https://leetcode.com/problems/two-sum/
+- Squares of a Sorted Array https://leetcode.com/problems/squares-of-a-sorted-array/
+- 3 Sum https://leetcode.com/problems/3sum/
+- Trapping Rain Water https://leetcode.com/problems/trapping-rain-water/
+- Container With Most Water https://leetcode.com/problems/container-with-most-water/
+- Median of Two Sorted Arrays https://leetcode.com/problems/median-of-two-sorted-arrays/
+- Contains Duplicate https://leetcode.com/problems/contains-duplicate/
+- Product of Array Except Self https://leetcode.com/problems/product-of-array-except-self/
+- Maximum Product Subarray https://leetcode.com/problems/maximum-product-subarray/
+- Find Minimum in Rotated Sorted Array https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+- Sum of Two Integers https://leetcode.com/problems/sum-of-two-integers/
+- Number of 1 Bits https://leetcode.com/problems/number-of-1-bits/
+- Counting Bits https://leetcode.com/problems/counting-bits/
+- Missing Number https://leetcode.com/problems/missing-number/
+- Reverse Bits https://leetcode.com/problems/reverse-bits/
+- Climbing Stairs https://leetcode.com/problems/climbing-stairs/
+- Coin Change https://leetcode.com/problems/coin-change/
+- Longest Common Subsequence https://leetcode.com/problems/longest-common-subsequence/
+- Word Break Problem https://leetcode.com/problems/word-break/
+- Combination Sum https://leetcode.com/problems/combination-sum-iv/
+- House Robber https://leetcode.com/problems/house-robber/
+- House Robber II https://leetcode.com/problems/house-robber-ii/
+- Decode Ways https://leetcode.com/problems/decode-ways/
+- Unique Paths https://leetcode.com/problems/unique-paths/
+- Jump Game https://leetcode.com/problems/jump-game/
+- Clone Graph https://leetcode.com/problems/clone-graph/
+- Course Schedule https://leetcode.com/problems/course-schedule/
+- Pacific Atlantic Water Flow https://leetcode.com/problems/pacific-atlantic-water-flow/
+- Longest Consecutive Sequence https://leetcode.com/problems/longest-consecutive-sequence/
+- Insert Interval https://leetcode.com/problems/insert-interval/
+- Non-overlapping Intervals https://leetcode.com/problems/non-overlapping-intervals/
+- Detect Cycle in a Linked List https://leetcode.com/problems/linked-list-cycle/
+- Merge Two Sorted Lists https://leetcode.com/problems/merge-two-sorted-lists/
+- Remove Nth Node From End Of List https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+- Reorder List https://leetcode.com/problems/reorder-list/
+- Set Matrix Zeroes https://leetcode.com/problems/set-matrix-zeroes/
+- Longest Repeating Character Replacement https://leetcode.com/problems/longest-repeating-character-replacement/
+- Valid Anagram https://leetcode.com/problems/valid-anagram/
+- Group Anagrams https://leetcode.com/problems/group-anagrams/
+- Valid Parentheses https://leetcode.com/problems/valid-parentheses/
+- Valid Palindrome https://leetcode.com/problems/valid-palindrome/
+- Palindromic Substrings https://leetcode.com/problems/palindromic-substrings/
+- Maximum Depth of Binary Tree https://leetcode.com/problems/maximum-depth-of-binary-tree/
+- Same Tree https://leetcode.com/problems/same-tree/
+- Invert/Flip Binary Tree https://leetcode.com/problems/invert-binary-tree/
+- Binary Tree Level Order Traversal https://leetcode.com/problems/binary-tree-level-order-traversal/
+- Serialize and Deserialize Binary Tree https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+- Subtree of Another Tree https://leetcode.com/problems/subtree-of-another-tree/
+- Construct Binary Tree from Preorder and Inorder Traversal https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+- Validate Binary Search Tree https://leetcode.com/problems/validate-binary-search-tree/
+- Kth Smallest Element in a BST https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+- Lowest Common Ancestor of BST https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+- Add and Search Word https://leetcode.com/problems/add-and-search-word-data-structure-design/
+- Find Median from Data Stream https://leetcode.com/problems/find-median-from-data-stream/
