@@ -11,7 +11,7 @@
 - *(Bit Manipulation)* You usually use bits as flags or indicators in these problems. So you don't have to worry about what the representation of the bits/integer are -> sometimes this is not the case though. Also note that bit operators have special properties you should be aware of: like the distributive applies to XOR. Also, in Python bit shiting adds bits and doesn't take them away like in fixed type length languages like C.
 
 ***
-### Important Questions (Blind 75 & Leetcodepatterns.com(non-premimum & part of top 5 tech companies[Microsoft,Apple,Amazon,Google,Facebook]))
+### Important Questions (Blind 75 & Leetcodepatterns.com(non-premimum & part of top 5 tech companies[Microsoft,Apple,Amazon,Google,Facebook]) & 2 extra questions from forums)
 - Spiral Matrix https://leetcode.com/problems/spiral-matrix/
 - Rotate Image https://leetcode.com/problems/rotate-image/
 - Word Search https://leetcode.com/problems/word-search/
@@ -95,3 +95,5 @@
 - Lowest Common Ancestor of BST https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 - Add and Search Word https://leetcode.com/problems/add-and-search-word-data-structure-design/
 - Find Median from Data Stream https://leetcode.com/problems/find-median-from-data-stream/
+- Cherry Pickup https://leetcode.com/problems/cherry-pickup/
+- Daily Temperatures https://leetcode.com/problems/daily-temperatures/
