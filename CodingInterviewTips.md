@@ -15,6 +15,7 @@
 - Spiral Matrix https://leetcode.com/problems/spiral-matrix/
   - Hint/tip: Sometimes it is easier to modify the input data structure and use it to slowly build up your solution.
 - Rotate Image https://leetcode.com/problems/rotate-image/
+  - An easy way to think about in-place problems: partition the given data structure into the "old" and "new" data structure. Delete the old bits off at the end of the function. This might be a very costly approach in terms of time but it is the simplest one.
 - Word Search https://leetcode.com/problems/word-search/
 - First Missing Positive https://leetcode.com/problems/first-missing-positive/
 - Combination Sum https://leetcode.com/problems/combination-sum/
