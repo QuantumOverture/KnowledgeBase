@@ -13,6 +13,7 @@
 ***
 ### Important Questions (Blind 75 & Leetcodepatterns.com(non-premimum & part of top 5 tech companies[Microsoft,Apple,Amazon,Google,Facebook]) & 2 extra questions from forums)
 - Spiral Matrix https://leetcode.com/problems/spiral-matrix/
+  - Hint/tip: Sometimes it is easier to modify the input data structure and use it to slowly build up your solution.
 - Rotate Image https://leetcode.com/problems/rotate-image/
 - Word Search https://leetcode.com/problems/word-search/
 - First Missing Positive https://leetcode.com/problems/first-missing-positive/
